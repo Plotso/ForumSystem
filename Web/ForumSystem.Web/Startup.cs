@@ -24,6 +24,7 @@
 
     public class Startup
     {
+        private const string SendGridAPIKey = ""; // moved to safer place
         private readonly IConfiguration configuration;
 
         public Startup(IConfiguration configuration)
@@ -62,7 +63,8 @@
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
+            //services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IEmailSender>(x => new SendGridEmailSender(configuration.GetValue<string>("EmailSettings:SendGridAPIKey")));
             services.AddTransient<ISettingsService, SettingsService>();
         }
 

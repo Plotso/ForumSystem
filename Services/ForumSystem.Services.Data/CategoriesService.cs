@@ -26,5 +26,14 @@
 
             return query.To<T>().ToList();
         }
+
+        public T GetByName<T>(string name)
+        {
+            var category = _categoriesRepository.All()
+              .Where(x => x.Name == name)
+              .To<T>()
+              .FirstOrDefault();
+            return category;
+        }
     }
 }

@@ -51,7 +51,7 @@
             services.AddControllersWithViews(
                 options =>
                     {
-                        options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+                        options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()); // CSRF prevention
                     }).AddRazorRuntimeCompilation();
             services.AddRazorPages();
 
@@ -66,6 +66,7 @@
             services.AddTransient<IEmailSender>(x => new SendGridEmailSender(configuration.GetValue<string>("EmailSettings:SendGridAPIKey")));
             services.AddTransient<ISettingsService, SettingsService>();
             services.AddTransient<ICategoriesService, CategoriesService>();
+            services.AddTransient<IPostsService, PostsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -21,6 +21,22 @@
       ]
     },
     {
+      "library": "jquery-validation@1.19.2",
+      "destination": "wwwroot/lib/jquery-validation/",
+      "files": [
+        "dist/jquery.validate.js",
+        "dist/jquery.validate.min.js"
+      ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/",
+      "files": [
+        "dist/jquery.validate.unobtrusive.js",
+        "dist/jquery.validate.unobtrusive.min.js"
+      ]
+    },
+    {
       "library": "@fortawesome/fontawesome-free@5.12.0",
       "destination": "wwwroot/lib/fontawesome/",
       "files": [
@@ -44,19 +60,32 @@
       ]
     },
     {
-      "library": "jquery-validation@1.19.2",
-      "destination": "wwwroot/lib/jquery-validation/",
+      "library": "tinymce@5.6.1",
+      "destination": "wwwroot/lib/tinymce/",
       "files": [
-        "dist/jquery.validate.js",
-        "dist/jquery.validate.min.js"
+        "tinymce.min.js",
+        "themes/silver/theme.min.js",
+        "skins/ui/oxide/content.min.css",
+        "skins/ui/oxide/skin.min.css",
+        "skins/content/default/content.min.css",
+        "icons/default/icons.min.js",
+        "plugins/image/plugin.min.js",
+        "plugins/paste/plugin.min.js",
+        "plugins/table/plugin.min.js",
+        "plugins/link/plugin.min.js",
+        "plugins/code/plugin.min.js",
+        "plugins/media/plugin.min.js",
+        "plugins/fullscreen/plugin.min.js",
+        "plugins/wordcount/plugin.min.js",
+        "plugins/searchreplace/plugin.min.js",
+        "plugins/lists/plugin.min.js"
       ]
     },
     {
-      "library": "jquery-validation-unobtrusive@3.2.11",
-      "destination": "wwwroot/lib/jquery-validation-unobtrusive/",
+      "library": "moment@2.29.1",
+      "destination": "wwwroot/lib/moment/",
       "files": [
-        "dist/jquery.validate.unobtrusive.js",
-        "dist/jquery.validate.unobtrusive.min.js"
+        "min/moment-with-locales.min.js"
       ]
     }
   ]

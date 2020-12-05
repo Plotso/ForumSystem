@@ -1,0 +1,7 @@
+﻿@model ForumSystem.Web.ViewModels.Posts.PostViewModel
+@{
+    ViewData["Title"] = Model.Title; 
+}
+
+<h1>@Model.Title</h1>
+@Html.Raw(@Model.SanitizedContent)

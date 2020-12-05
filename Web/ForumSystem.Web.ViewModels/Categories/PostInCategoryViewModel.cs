@@ -9,6 +9,8 @@
 
     public class PostInCategoryViewModel : IMapFrom<Post>
     {
+        private const int MaxCharacters = 300;
+
         public int Id { get; set; }
 
         public string Title { get; set; }
@@ -19,9 +21,9 @@
         {
             get
             {
-                var content = WebUtility.HtmlDecode(Regex.Replace(this.Content, @"<[^>]+>", string.Empty));
-                return content.Length > 300
-                        ? content.Substring(0, 300) + "..."
+                var content = WebUtility.HtmlDecode(Regex.Replace(Content, @"<[^>]+>", string.Empty));
+                return content.Length > MaxCharacters
+                        ? content.Substring(0, MaxCharacters) + "..."
                         : content;
             }
         }

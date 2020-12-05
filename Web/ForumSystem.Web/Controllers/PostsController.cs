@@ -27,8 +27,8 @@
 
         public IActionResult ById(int id)
         {
-            //ToDo: read the post
-            return View();
+            var viewModel = _postsService.GetById<PostViewModel>(id);
+            return View(viewModel);
         }
 
         [Authorize]

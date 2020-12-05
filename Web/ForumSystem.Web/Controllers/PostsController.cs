@@ -28,6 +28,11 @@
         public IActionResult ById(int id)
         {
             var viewModel = _postsService.GetById<PostViewModel>(id);
+            if (viewModel == null)
+            {
+                return NotFound();
+            }
+
             return View(viewModel);
         }
 
@@ -35,8 +40,10 @@
         public IActionResult Create()
         {
             var categories = _categoriesService.GetAll<CategoryDropDownViewModel>();
-            var viewModel = new PostCreateInputModel();
-            viewModel.Categories = categories;
+            var viewModel = new PostCreateInputModel
+            {
+                Categories = categories
+            };
 
             return View(viewModel);
         }
